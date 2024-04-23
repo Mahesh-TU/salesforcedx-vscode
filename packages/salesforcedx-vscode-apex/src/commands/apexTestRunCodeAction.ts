@@ -194,8 +194,7 @@ export class ApexLibraryTestRunExecutor extends LibraryCommandletExecutor<{}> {
     // Remove duplicates
     const files = Array.from(
       new Set(filesWithDuplicates.map(file => file.toString()))
-    )
-    .map(filePath => vscode.Uri.parse(filePath));
+    ).map(filePath => vscode.Uri.parse(filePath));
 
     // Iterate over each file found
     for (const file of files) {
@@ -235,9 +234,8 @@ const getTempFolder = (): string => {
 
 //   T E S T   C L A S S
 
-// redirects to run-all-tests cmd
 export const apexDebugClassRunCodeActionDelegate = (testClass: string) => {
-  void vscode.commands.executeCommand('sf.test.view.debugTests', {
+  void vscode.commands.executeCommand('sf.apex.debug.class.run', {
     name: testClass
   });
 };
@@ -284,7 +282,7 @@ export const apexTestMethodRunCodeActionDelegate = (testMethod: string) => {
   void vscode.commands.executeCommand('sf.apex.test.method.run', testMethod);
 };
 export const apexDebugMethodRunCodeActionDelegate = (testMethod: string) => {
-  void vscode.commands.executeCommand('sf.test.view.debugSingleTest', {
+  void vscode.commands.executeCommand('sf.apex.debug.method.run', {
     name: testMethod
   });
 };

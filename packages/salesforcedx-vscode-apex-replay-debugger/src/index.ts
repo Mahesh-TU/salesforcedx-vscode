@@ -195,7 +195,7 @@ export const activate = async (extensionContext: vscode.ExtensionContext) => {
 
   // Debug Tests command
   const debugTests = vscode.commands.registerCommand(
-    'sf.test.view.debugTests',
+    'sf.apex.debug.class.run',
     async test => {
       await setupAndDebugTests(test.name);
     }
@@ -203,7 +203,7 @@ export const activate = async (extensionContext: vscode.ExtensionContext) => {
 
   // Debug Single Test command
   const debugTest = vscode.commands.registerCommand(
-    'sf.test.view.debugSingleTest',
+    'sf.apex.debug.method.run',
     async test => {
       const name = test.name.split('.');
       await setupAndDebugTests(name[0], name[1]);
